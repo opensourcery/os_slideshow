@@ -1,0 +1,19 @@
+<?php
+// $Id$
+/**
+ * @file
+ * Base slideshow feature.
+ */
+
+include_once('os_slideshow.features.inc');
+
+/**
+ * Implementation of hook_views_pre_render().
+ */
+function os_slideshow_views_pre_render(&$view) {
+  if ($view->name == 'homepage_slideshow') {
+    // Add css.
+    drupal_add_css(drupal_get_path('module', 'os_slideshow') . '/os-slideshow.css');
+  }
+}
+
