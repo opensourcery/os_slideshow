@@ -2,6 +2,9 @@
 
 core = 6.x
 
+projects[libraries][subdir] = "contrib"
+projects[libraries][version] = "1.0-alpha1"
+
 projects[link][subdir] = "contrib"
 projects[link][version] = "2.9"
 
