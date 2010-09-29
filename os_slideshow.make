@@ -1,5 +1,7 @@
 ; $Id$
 
+core = 6.x
+
 projects[link][subdir] = "contrib"
 projects[link][version] = "2.9"
 
