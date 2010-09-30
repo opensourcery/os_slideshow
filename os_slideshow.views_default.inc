@@ -10,7 +10,7 @@ function os_slideshow_views_default_views() {
   $view = new view;
   $view->name = 'homepage_slideshow';
   $view->description = 'Homepage Slideshow';
-  $view->tag = 'Action Center';
+  $view->tag = 'OpenSourcery';
   $view->view_php = '';
   $view->base_table = 'node';
   $view->is_cacheable = FALSE;
@@ -57,7 +57,7 @@ function os_slideshow_views_default_views() {
       'empty_zero' => 0,
       'link_to_node' => 0,
       'label_type' => 'none',
-      'format' => 'homepage_slideshow_default',
+      'format' => 'os-slideshow_default',
       'multiple' => array(
         'group' => TRUE,
         'multiple_number' => '',

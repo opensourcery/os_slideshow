@@ -14,6 +14,29 @@ function os_slideshow_ctools_plugin_api() {
 }
 
 /**
+ * Implementation of hook_imagecache_default_presets().
+ */
+function os_slideshow_imagecache_default_presets() {
+  $items = array(
+    'os-slideshow' => array(
+      'presetname' => 'os-slideshow',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_scale_and_crop',
+          'data' => array(
+            'width' => '960',
+            'height' => '377',
+          ),
+        ),
+      ),
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implementation of hook_node_info().
  */
 function os_slideshow_node_info() {

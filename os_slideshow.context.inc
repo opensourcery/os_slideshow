@@ -24,7 +24,7 @@ function os_slideshow_context_default_contexts() {
         'views-homepage_slideshow-block_1' => array(
           'module' => 'views',
           'delta' => 'homepage_slideshow-block_1',
-          'region' => 'navigation',
+          'region' => 'highlight',
           'weight' => 0,
         ),
       ),
