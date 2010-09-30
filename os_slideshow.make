@@ -1,6 +1,7 @@
 ; $Id$
 
 core = 6.x
+api = 2
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = "1.0-alpha1"
