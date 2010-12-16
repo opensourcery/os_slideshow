@@ -1,19 +1,89 @@
 <?php
-// $Id$
-/**
- * @file
- * Base slideshow feature.
- */
 
 include_once('os_slideshow.features.inc');
 
 /**
- * Implementation of hook_views_pre_render().
+ * Implementation of hook_block().
  */
-function os_slideshow_views_pre_render(&$view) {
-  if ($view->name == 'homepage_slideshow') {
-    // Add css.
-    drupal_add_css(drupal_get_path('module', 'os_slideshow') . '/os-slideshow.css');
+function os_slideshow_block($op = 'list', $delta = 0, $edit = array()) {
+  switch ($op) {
+    case 'list':
+      $blocks = array();
+      $result = db_query("SELECT nid FROM {node} WHERE type = '%s'",
+        array(':type' => 'slideshow'));
+      while ($row = db_fetch_array($result)) {
+        $node = node_load($row['nid']);
+        if (!empty($node->field_slideshow_machine_name[0]['value'])) {
+          $blocks[$node->field_slideshow_machine_name[0]['value']] = array(
+            'info' => $node->title,
+            'cache' => BLOCK_NO_CACHE,
+          );
+        }
+      }
+      return $blocks;
+    case 'view':
+      $content = '';
+      if ($nid = _os_slideshow_get_slideshow_nid($delta)) {
+        $node = node_load($nid);
+        if (($view = views_get_view('slideshow')) && $view->access('default')) {
+          // hack the view to set the imagecache presets
+          $fields = &$view->display['default']->display_options['fields'];
+          $fields['field_slide_image_fid']['format']   = $node->field_slideshow_imagecache_slide[0]['value'] .'_default';
+          $fields['field_slide_image_fid_1']['format'] = $node->field_slideshow_imagecache_thumb[0]['value'] .'_default';
+
+          $content = $view->preview('default', array($nid));
+        }
+      }
+      return array('subject' => '', 'content' => $content);
   }
 }
 
+/**
+ * Retrieves a slideshow's node id from its block delta (aka machine name).
+ */
+function _os_slideshow_get_slideshow_nid($machine_name) {
+  $result = db_query("SELECT nid FROM {content_type_slideshow} WHERE field_slideshow_machine_name_value = '%s'",
+    array(':machine_name' => $machine_name));
+  if ($nid = db_result($result)) {
+    return $nid;
+  }
+  return FALSE;
+}
+
+/**
+ * Implementation of hook_content_allowed_values_alter().
+ *
+ * Sets the allowed values for the imagecache fields on the add/edit form for
+ * slideshow nodes.
+ */
+function os_slideshow_content_allowed_values_alter(&$allowed_values, $field) {
+  switch ($field['field_name']) {
+    case 'field_slideshow_imagecache_slide': // intentional fall-through
+    case 'field_slideshow_imagecache_thumb':
+      foreach (imagecache_presets() as $preset) {
+        $allowed_values[$preset['presetname']] = $preset['presetname'];
+      }
+      break;
+    default:
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_admin_link() (contextual module).
+ */
+function os_slideshow_admin_link($type, $object) {
+  $links = array();
+  if ($type == 'block' && $object->module == 'os_slideshow') {
+    if ($nid = _os_slideshow_get_slideshow_nid($object->delta)) {
+      $node = node_load($nid);
+      $links['slideshow-edit'] = array(
+        'title' => t('Edit'),
+        'href' => "node/{$node->nid}/edit",
+        'attributes' => array('class' => 'icon-edit'),
+        'query' => array('destination' => $_GET['q']),
+      );
+    }
+  }
+  return $links;
+}

@@ -5,10 +5,7 @@
  */
 function os_slideshow_ctools_plugin_api() {
   list($module, $api) = func_get_args();
-  if ($module == "context" && $api == "context") {
-    return array("version" => 3);
-  }
-  elseif ($module == "strongarm" && $api == "strongarm") {
+  if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => 1);
   }
 }
@@ -18,16 +15,30 @@ function os_slideshow_ctools_plugin_api() {
  */
 function os_slideshow_imagecache_default_presets() {
   $items = array(
-    'os-slideshow' => array(
-      'presetname' => 'os-slideshow',
+    'slideshow-front' => array(
+      'presetname' => 'slideshow-front',
       'actions' => array(
         '0' => array(
           'weight' => '0',
           'module' => 'imagecache',
           'action' => 'imagecache_scale_and_crop',
           'data' => array(
-            'width' => '960',
-            'height' => '377',
+            'width' => '670',
+            'height' => '265',
+          ),
+        ),
+      ),
+    ),
+    'slideshow-front-thumbnail' => array(
+      'presetname' => 'slideshow-front-thumbnail',
+      'actions' => array(
+        '0' => array(
+          'weight' => '0',
+          'module' => 'imagecache',
+          'action' => 'imagecache_scale_and_crop',
+          'data' => array(
+            'width' => '100',
+            'height' => '80',
           ),
         ),
       ),
@@ -44,11 +55,22 @@ function os_slideshow_node_info() {
     'slide' => array(
       'name' => t('Slide'),
       'module' => 'features',
-      'description' => t('An image to be used in the homepage slideshow.'),
+      'description' => t('Image (and other data) to be used as one slide in a <em>Slideshow</em>.'),
       'has_title' => '1',
-      'title_label' => t('Headline'),
+      'title_label' => t('Title'),
       'has_body' => '1',
-      'body_label' => t('Description'),
+      'body_label' => t('Body'),
+      'min_word_count' => '0',
+      'help' => '',
+    ),
+    'slideshow' => array(
+      'name' => t('Slideshow'),
+      'module' => 'features',
+      'description' => t('Container for a set of slideshow slides.'),
+      'has_title' => '1',
+      'title_label' => t('Administrative Title'),
+      'has_body' => '0',
+      'body_label' => '',
       'min_word_count' => '0',
       'help' => '',
     ),
