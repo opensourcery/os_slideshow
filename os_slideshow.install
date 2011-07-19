@@ -1,25 +1,16 @@
 <?php
-// $Id$
 /**
  * @file
  * Install hooks for the slideshow feature.
  */
 
-define('HOMEPAGE_SLIDESHOW_CONTENT_TYPE', 'slide');
-
 /**
- * Implementation of hook_install().
+ * Implementation of hook_enable().
  */
-function os_slideshow_install() {
-  $title = 'Homepage Slideshow';
-
-  drupal_load('module', 'nodequeue');
-  $queue = new nodequeue_queue('nodequeue');
-  $queue->title = $title;
-  $queue->show_in_links = 1;
-  $queue->link = t('Add to slideshow');
-  $queue->link_remove = t('Remove from slideshow');
-  $queue->types = array('0' => HOMEPAGE_SLIDESHOW_CONTENT_TYPE);
-  $qid = nodequeue_save($queue);
-  $subqueue = nodequeue_add_subqueue($queue, $title);
+function os_slideshow_enable() {
+  $result = RotatingBanner::getAll();
+  if (empty($result)) {
+    // No rotating banners exist yet, create one.
+    RotatingBanner::create('os_slideshow');
+  }
 }
