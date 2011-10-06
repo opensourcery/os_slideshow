@@ -1,22 +1,31 @@
-; $Id$
-
+; Drush Makefile for OpenSourcery Slideshow feature.
 core = 7.x
 api = 2
 
-projects[rotating_banner][subdir] = "contrib"
-projects[rotating_banner][download][type] = "git"
-projects[rotating_banner][download][revision] = "b31018014"
+; Slideshow
+projects[boxes][subdir] = "contrib"
+projects[boxes][version] = "1.0-beta6"
 
+projects[entity][subdir] = "contrib"
+projects[entity][version] = "1.0-beta10"
+
+projects[field_collection][subdir] = "contrib"
+projects[field_collection][version] = "1.0-beta2"
+
+projects[link][subdir] = "contrib"
+projects[link][version] = "1.0-beta1"
+
+; We're using Media 7.x-2.x
 projects[media][subdir] = "contrib"
-projects[media][version] = "1.0-beta5"
+projects[media][type] = "module"
+projects[media][download][type] = "git"
+projects[media][download][revision] = "80fc1808219b53af529bbf2a05fe53e3feb68af4"
 
-; TODO this is adding it one directory too deep.
-libraries[jquery_cycle][download][type] = "get"
-libraries[jquery_cycle][download][url] = "http://www.malsup.com/jquery/cycle/release/jquery.cycle.zip?v2.86"
-libraries[jquery_cycle][destination] = "modules/contrib/rotating_banner/includes"
+projects[views_slideshow][subdir] = "contrib"
+projects[views_slideshow][version] = "3.x-dev"
 
-; TODO this is adding it one directory too deep.
-libraries[jquery_easing][download][type] = "get"
-libraries[jquery_easing][download][url] = "http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"
-libraries[jquery_easing][destination] = "modules/contrib/rotating_banner/includes"
+projects[views_boxes][subdir] = "contrib"
+projects[views_boxes][version] = "1.0-beta6"
 
+libraries[jquery.cycle][download][type] = "get"
+libraries[jquery.cycle][download][url] = "https://raw.github.com/malsup/cycle/master/jquery.cycle.all.js"
