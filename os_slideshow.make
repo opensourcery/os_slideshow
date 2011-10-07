@@ -2,9 +2,13 @@
 core = 7.x
 api = 2
 
-; Slideshow
-projects[boxes][subdir] = "contrib"
-projects[boxes][version] = "1.0-beta6"
+
+; Bean - need Content > Blocks filter fix[1] so using current HEAD
+; [1]: http://drupalcode.org/project/bean.git/commit/acdd2e1817015e5804516bc503c9b585e16635fb
+projects[bean][subdir] = "contrib"
+projects[bean][type] = "module"
+projects[bean][download][type] = "git"
+projects[bean][download][revision] = "dae743b578bed285541bba79544a1b40b325a19e"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-beta10"
@@ -29,9 +33,6 @@ projects[styles][download][revision] = "7175402da2251c067b1bdc97cbf3a7ec03350435
 
 projects[views_slideshow][subdir] = "contrib"
 projects[views_slideshow][version] = "3.x-dev"
-
-projects[views_boxes][subdir] = "contrib"
-projects[views_boxes][version] = "1.0-beta6"
 
 libraries[jquery.cycle][download][type] = "get"
 libraries[jquery.cycle][download][url] = "https://raw.github.com/malsup/cycle/master/jquery.cycle.all.js"

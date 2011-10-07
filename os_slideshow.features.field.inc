@@ -10,6 +10,60 @@
 function os_slideshow_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'bean-slideshow-field_slideshow_slides'
+  $fields['bean-slideshow-field_slideshow_slides'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_slideshow_slides',
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'module' => 'field_collection',
+      'settings' => array(
+        'path' => '',
+        'profile2_private' => FALSE,
+      ),
+      'translatable' => '0',
+      'type' => 'field_collection',
+    ),
+    'field_instance' => array(
+      'bundle' => 'slideshow',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'field_collection',
+          'settings' => array(
+            'add' => 'Add Slide',
+            'delete' => 'Delete Slide',
+            'description' => 1,
+            'edit' => 'Edit Slide',
+          ),
+          'type' => 'field_collection_view',
+          'weight' => '0',
+        ),
+      ),
+      'entity_type' => 'bean',
+      'field_name' => 'field_slideshow_slides',
+      'label' => 'Slides',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'field_collection',
+        'settings' => array(),
+        'type' => 'field_collection_embed',
+        'weight' => 0,
+      ),
+    ),
+  );
+
   // Exported field: 'field_collection_item-field_slideshow_slides-field_slide_headline'
   $fields['field_collection_item-field_slideshow_slides-field_slide_headline'] = array(
     'field_config' => array(
@@ -46,11 +100,11 @@ function os_slideshow_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 2,
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'field_collection_item',
@@ -110,11 +164,11 @@ function os_slideshow_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'file',
+          'label' => 'inline',
+          'module' => 'styles',
           'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 0,
+          'type' => 'styles_file_thumbnail',
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'field_collection_item',
@@ -192,11 +246,11 @@ function os_slideshow_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'field_collection_item',

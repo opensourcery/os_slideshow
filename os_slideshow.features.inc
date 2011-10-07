@@ -9,6 +9,10 @@
  */
 function os_slideshow_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "bean_admin_ui" && $api == "bean") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "file_entity" && $api == "file_default_displays") {
     return array("version" => "1");
   }
@@ -56,23 +60,6 @@ function os_slideshow_image_default_styles() {
   );
 
   return $styles;
-}
-
-/**
- * Implements hook_node_info().
- */
-function os_slideshow_node_info() {
-  $items = array(
-    'slideshow' => array(
-      'name' => t('Slideshow'),
-      'base' => 'node_content',
-      'description' => '',
-      'has_title' => '1',
-      'title_label' => t('Administrative Title'),
-      'help' => '',
-    ),
-  );
-  return $items;
 }
 
 /**
