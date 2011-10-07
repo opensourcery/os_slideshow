@@ -21,6 +21,12 @@ projects[media][type] = "module"
 projects[media][download][type] = "git"
 projects[media][download][revision] = "80fc1808219b53af529bbf2a05fe53e3feb68af4"
 
+; We want file_styles to be exportable, so we need bleeding edge Styles
+projects[styles][subdir] = "contrib"
+projects[styles][type] = "module"
+projects[styles][download][type] = "git"
+projects[styles][download][revision] = "7175402da2251c067b1bdc97cbf3a7ec03350435"
+
 projects[views_slideshow][subdir] = "contrib"
 projects[views_slideshow][version] = "3.x-dev"
 
