@@ -31,6 +31,7 @@ features[variable][] = "comment_subject_field_slideshow"
 features[variable][] = "menu_options_slideshow"
 features[variable][] = "node_options_slideshow"
 features[views_view][] = "slideshow"
+files[] = plugins/bean/slideshow.inc
 name = "OpenSourcery Slideshow"
 package = "Features"
 php = "5.2.4"
