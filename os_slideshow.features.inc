@@ -9,6 +9,10 @@
  */
 function os_slideshow_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "file_entity" && $api == "file_default_displays") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -69,4 +73,90 @@ function os_slideshow_node_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implements hook_styles_default_styles().
+ */
+function os_slideshow_styles_default_styles() {
+  $styles = array();
+
+  // Exported style: slideshow_default
+
+  $styles['file']['styles']['slideshow_default'] = array(
+    'label' => 'slideshow_default',
+    'description' => '',
+    'preset_info' => array(
+      'image' => array(
+        'slideshow_default' => array(
+          'default preset' => 'original',
+          'preset' => 'slideshow-default',
+        ),
+      ),
+      'audio' => array(
+        'slideshow_default' => array(
+          'default preset' => 'original',
+        ),
+      ),
+      'video' => array(
+        'slideshow_default' => array(
+          'default preset' => 'original',
+        ),
+      ),
+      'default' => array(
+        'slideshow_default' => array(
+          'default preset' => 'original',
+        ),
+      ),
+      'media_vimeo' => array(
+        'slideshow_default' => array(
+          'default preset' => 'unlinked_thumbnail',
+          'preset' => 'video',
+        ),
+      ),
+      'media_youtube' => array(
+        'slideshow_default' => array(
+          'default preset' => 'unlinked_thumbnail',
+          'preset' => 'video',
+        ),
+      ),
+    ),
+  );
+  return $styles;
+}
+
+/**
+ * Implements hook_styles_default_presets_alter().
+ */
+function os_slideshow_styles_default_presets_alter(&$presets) {
+  $styles = styles_default_styles();
+  if ($styles['file']['styles']['slideshow_default']['storage'] == STYLES_STORAGE_DEFAULT) {
+    $presets['file']['containers']['image']['styles']['slideshow_default'] = array(
+      'default preset' => 'original',
+      'preset' => 'slideshow-default',
+    );
+
+    $presets['file']['containers']['audio']['styles']['slideshow_default'] = array(
+      'default preset' => 'original',
+    );
+
+    $presets['file']['containers']['video']['styles']['slideshow_default'] = array(
+      'default preset' => 'original',
+    );
+
+    $presets['file']['containers']['default']['styles']['slideshow_default'] = array(
+      'default preset' => 'original',
+    );
+
+    $presets['file']['containers']['media_vimeo']['styles']['slideshow_default'] = array(
+      'default preset' => 'unlinked_thumbnail',
+      'preset' => 'video',
+    );
+
+    $presets['file']['containers']['media_youtube']['styles']['slideshow_default'] = array(
+      'default preset' => 'unlinked_thumbnail',
+      'preset' => 'video',
+    );
+
+  }
 }
