@@ -2,8 +2,7 @@
 core = 7.x
 api = 2
 
-
-; Bean - need Content > Blocks filter fix[1] so using current HEAD
+; Bean - need Content > Blocks filter fix[1], so using current HEAD
 ; [1]: http://drupalcode.org/project/bean.git/commit/acdd2e1817015e5804516bc503c9b585e16635fb
 projects[bean][subdir] = "contrib"
 projects[bean][type] = "module"
