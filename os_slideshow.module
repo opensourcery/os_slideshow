@@ -7,6 +7,15 @@
 include_once('os_slideshow.features.inc');
 
 /**
+ * Implements hook_bean_types_api_info().
+ */
+function os_slideshow_bean_types_api_info() {
+  return array(
+    'api' => 1,
+  );
+}
+
+/**
  * Implements hook_bean_types().
  */
 function os_slideshow_bean_types() {
