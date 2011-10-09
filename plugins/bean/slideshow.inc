@@ -42,7 +42,7 @@ class slideshow_bean extends bean_plugin {
       '#type' => 'select',
       '#title' => t('Transition effect'),
       '#options' => array('fade' => 'Fade'),
-      '#default_value' => $bean->transition,
+      '#default_value' => $bean->effect,
     );
     $form['timeout'] = array(
       '#type' => 'textfield',
