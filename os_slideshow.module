@@ -33,3 +33,28 @@ function os_slideshow_bean_types() {
   );
   return $plugins;
 }
+
+/**
+ * Creates a new slide and adds it to the given slideshow bean.
+ */
+function os_slideshow_add_slide($bean, $image_path, $headline, $teaser, $link_title, $link_path) {
+  // Create a new slide field_collection entity
+  $slide = entity_create('field_collection_item', array('field_name' => 'field_slideshow_slides'));
+  $slide->field_slide_headline['und'][0]['value'] = $headline;
+  $slide->field_slide_teaser['und'][0]['value'] = $teaser;
+  $slide->field_slide_teaser['und'][0]['format'] = 'full_html';
+  $slide->field_slide_link['und'][0]['title'] = $link_title;
+  $slide->field_slide_link['und'][0]['url'] = $link_path;
+  $slide->setHostEntity('bean', $bean);
+
+  $file = (object) array(
+    'uid' => 1,
+    'uri' => $image_path,
+    'filemime' => file_get_mimetype($image_path),
+    'status' => 1,
+  );
+  $file = file_copy($file, 'public://');
+  $slide->field_slide_image['und'][0] = (array)$file;
+  $slide->field_slide_image['und'][0]['display'] = TRUE;
+  $slide->save();
+}
