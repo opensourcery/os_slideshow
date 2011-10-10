@@ -339,7 +339,7 @@ function os_slideshow_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'rows' => '7',
+          'rows' => '3',
         ),
         'type' => 'text_textarea',
         'weight' => '2',
