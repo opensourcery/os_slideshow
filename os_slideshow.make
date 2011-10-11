@@ -8,6 +8,8 @@ projects[bean][subdir] = "contrib"
 projects[bean][type] = "module"
 projects[bean][download][type] = "git"
 projects[bean][download][revision] = "dae743b578bed285541bba79544a1b40b325a19e"
+; Can't install bean_admin_ui in install profile - http://drupal.org/node/1179420
+projects[bean][patch][] = "http://drupal.org/files/bean.1179420-6.install-profile-crash.patch"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-beta10"
