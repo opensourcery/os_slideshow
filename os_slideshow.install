@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function os_slideshow_install() {
+  // Make sure our fields get installed all the way before, say, a dependent
+  // module (during an install profile installation) tries to create a bean.
+  features_rebuild();
+}
