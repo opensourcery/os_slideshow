@@ -2,14 +2,13 @@
 core = 7.x
 api = 2
 
-; Bean - need Content > Blocks filter fix[1], so using current HEAD
-; [1]: http://drupalcode.org/project/bean.git/commit/acdd2e1817015e5804516bc503c9b585e16635fb
+; Bean
 projects[bean][subdir] = "contrib"
 projects[bean][type] = "module"
 projects[bean][download][type] = "git"
-projects[bean][download][revision] = "dae743b578bed285541bba79544a1b40b325a19e"
-; Can't install bean_admin_ui in install profile - http://drupal.org/node/1179420
-projects[bean][patch][] = "http://drupal.org/files/bean.1179420-8.install-profile-crash.patch"
+projects[bean][download][revision] = "75e251868f8185e160f96165ab5a232f04f4f67c"
+; http://drupal.org/node/1309126: Give beans a delta / machine name
+projects[bean][patch][] = "http://drupal.org/files/bean_delta-1309126.patch"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-beta10"
