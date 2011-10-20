@@ -6,9 +6,8 @@ api = 2
 projects[bean][subdir] = "contrib"
 projects[bean][type] = "module"
 projects[bean][download][type] = "git"
-projects[bean][download][revision] = "75e251868f8185e160f96165ab5a232f04f4f67c"
-; http://drupal.org/node/1309126: Give beans a delta / machine name
-projects[bean][patch][] = "http://drupal.org/files/bean_delta-1309126.patch"
+projects[bean][download][revision] = "cc553e6c25cacfeb5276344cdd66debcb632f6b3"
+projects[bean][patch][] = "http://drupal.org/files/bean_delta-1309126-followup-16.patch"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-beta10"
