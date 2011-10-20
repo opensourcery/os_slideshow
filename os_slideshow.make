@@ -6,8 +6,7 @@ api = 2
 projects[bean][subdir] = "contrib"
 projects[bean][type] = "module"
 projects[bean][download][type] = "git"
-projects[bean][download][revision] = "cc553e6c25cacfeb5276344cdd66debcb632f6b3"
-projects[bean][patch][] = "http://drupal.org/files/bean_delta-1309126-followup-16.patch"
+projects[bean][download][revision] = "4e71d6323bd547440fc7d5883300e0bd483be83b"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-beta10"
