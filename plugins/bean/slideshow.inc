@@ -56,7 +56,7 @@ class slideshow_bean extends bean_plugin {
   /**
    * Displays the bean using our Views Slideshow view.
    */
-  public function view($bean, $content, $view_mode = 'full', $langcode = NULL) {
+  public function view($bean, $content, $view_mode = 'full', $langcode = NULL, $page = NULL) {
     $view = views_get_view('slideshow');
     if (!$view || !$view->access('default')) {
       return;
