@@ -18,7 +18,6 @@ features[field][] = "field_collection_item-field_slideshow_slides-field_slide_li
 features[field][] = "field_collection_item-field_slideshow_slides-field_slide_teaser"
 features[file_display][] = "default__file_styles_slideshow_default__file_field_styles_file_slideshow_default"
 features[file_display][] = "image__file_styles_slideshow_default__file_field_styles_file_slideshow_default"
-features[file_display][] = "video__file_styles_slideshow_default__file_field_styles_file_slideshow_default"
 features[image][] = "slideshow-default"
 features[styles_style][] = "file:slideshow_default"
 features[views_view][] = "slideshow"

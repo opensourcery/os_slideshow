@@ -38,6 +38,7 @@ function os_slideshow_image_default_styles() {
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
         'form callback' => 'image_resize_form',
         'summary theme' => 'image_resize_summary',
         'module' => 'image',
@@ -90,13 +91,11 @@ function os_slideshow_styles_default_styles() {
       'media_vimeo' => array(
         'slideshow_default' => array(
           'default preset' => 'unlinked_thumbnail',
-          'preset' => 'video',
         ),
       ),
       'media_youtube' => array(
         'slideshow_default' => array(
           'default preset' => 'unlinked_thumbnail',
-          'preset' => 'video',
         ),
       ),
     ),
@@ -129,12 +128,10 @@ function os_slideshow_styles_default_presets_alter(&$presets) {
 
     $presets['file']['containers']['media_vimeo']['styles']['slideshow_default'] = array(
       'default preset' => 'unlinked_thumbnail',
-      'preset' => 'video',
     );
 
     $presets['file']['containers']['media_youtube']['styles']['slideshow_default'] = array(
       'default preset' => 'unlinked_thumbnail',
-      'preset' => 'video',
     );
 
   }

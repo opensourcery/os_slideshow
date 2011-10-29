@@ -71,7 +71,7 @@ function os_slideshow_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = 0;
   $handler->display->display_options['row_options']['default_field_elements'] = 0;
-  /* Relationship: Field: Slides (field_slideshow_slides) */
+  /* Relationship: Block: Slides (field_slideshow_slides) */
   $handler->display->display_options['relationships']['field_slideshow_slides_value']['id'] = 'field_slideshow_slides_value';
   $handler->display->display_options['relationships']['field_slideshow_slides_value']['table'] = 'field_data_field_slideshow_slides';
   $handler->display->display_options['relationships']['field_slideshow_slides_value']['field'] = 'field_slideshow_slides_value';
