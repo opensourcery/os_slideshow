@@ -20,6 +20,7 @@ features[file_display][] = "default__file_styles_slideshow_default__file_field_s
 features[file_display][] = "image__file_styles_slideshow_default__file_field_styles_file_slideshow_default"
 features[image][] = "slideshow-default"
 features[styles_style][] = "file:slideshow_default"
+features[user_permission][] = "view any slideshow bean"
 features[views_view][] = "slideshow"
 files[] = "plugins/bean/slideshow.inc"
 name = "OpenSourcery Slideshow"
