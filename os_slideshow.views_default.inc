@@ -160,12 +160,14 @@ function os_slideshow_views_default_views() {
   $handler->display->display_options['fields']['field_slide_link']['relationship'] = 'field_slideshow_slides_value';
   $handler->display->display_options['fields']['field_slide_link']['label'] = '';
   $handler->display->display_options['fields']['field_slide_link']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_slide_link']['alter']['alter_text'] = 0;
+  $handler->display->display_options['fields']['field_slide_link']['alter']['alter_text'] = 1;
+  $handler->display->display_options['fields']['field_slide_link']['alter']['text'] = '<a href="[field_slide_link-url]" class="button button-red">[field_slide_link-title]</a>';
   $handler->display->display_options['fields']['field_slide_link']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['alter']['external'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['alter']['replace_spaces'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['alter']['trim_whitespace'] = 0;
+  $handler->display->display_options['fields']['field_slide_link']['alter']['link_class'] = 'button button-red';
   $handler->display->display_options['fields']['field_slide_link']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_slide_link']['alter']['ellipsis'] = 1;
@@ -173,7 +175,7 @@ function os_slideshow_views_default_views() {
   $handler->display->display_options['fields']['field_slide_link']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['alter']['html'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_slide_link']['element_default_classes'] = 1;
+  $handler->display->display_options['fields']['field_slide_link']['element_default_classes'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['hide_empty'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_slide_link']['hide_alter_empty'] = 0;
@@ -184,7 +186,7 @@ function os_slideshow_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h3 class="title">[field_slide_headline]</h3><div class="teaser">[field_slide_teaser]<div class="link">[field_slide_link]</div></div>';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="title-wrapper"><h3 class="title">[field_slide_headline]</h3></div><div class="corner"></div><div class="shadow"></div><div class="teaser">[field_slide_teaser]<div class="link">[field_slide_link]</div></div>';
   $handler->display->display_options['fields']['nothing']['alter']['make_link'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['absolute'] = 0;
   $handler->display->display_options['fields']['nothing']['alter']['external'] = 0;
