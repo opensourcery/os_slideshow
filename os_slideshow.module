@@ -7,6 +7,15 @@
 include_once('os_slideshow.features.inc');
 
 /**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function os_slideshow_form_bean_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#bundle'] === 'slideshow') {
+    $form['#attached']['css'][] = drupal_get_path('module', 'os_slideshow') . '/os_slideshow.css';
+  }
+}
+
+/**
  * Implements hook_bean_types_api_info().
  */
 function os_slideshow_bean_types_api_info() {
