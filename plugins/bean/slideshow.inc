@@ -59,10 +59,17 @@ class slideshow_bean extends bean_plugin {
     if (!$view || !$view->access('default')) {
       return;
     }
+
+    // Turn off Views's contextual links; the user wants to edit the block, not
+    // the view itself, and Views's links clobber Bean's.
+    $view->hide_admin_links = TRUE;
+
+    // Manipulate the view to set slideshow options.
     $options = &$view->display_handler->options;
     $options['style_options']['views_slideshow_cycle']['timeout'] = $bean->timeout;
     $options['style_options']['views_slideshow_cycle']['effect'] = $bean->effect;
     $options['fields']['field_slide_image']['type'] = $bean->file_style;
+
     return array(
       '#markup' => $view->preview('default', array($bean->bid)),
     );
