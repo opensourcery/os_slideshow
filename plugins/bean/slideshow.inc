@@ -48,6 +48,10 @@ class slideshow_bean extends bean_plugin {
       '#description' => t('The time between slides, in milliseconds.'),
       '#default_value' => $bean->timeout,
     );
+    // Add some admin CSS and JS from Beanslide
+    $path = drupal_get_path('module', 'os_slideshow');
+    drupal_add_js($path . '/os_slideshow.admin.js');
+    drupal_add_css($path . '/os_slideshow.admin.css');
     return $form;
   }
 

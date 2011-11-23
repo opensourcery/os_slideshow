@@ -1,0 +1,8 @@
+.ombuslide-processed .overview .overview-column  {
+  width: 32%;
+  float: left;
+}
+.ombuslide-processed .overview-column img {
+  width: 70px;
+  height: 70px;
+}
