@@ -25,14 +25,18 @@
 }
 
 .field-name-field-slide-headline input {
-  width: 280px;
+  width: 260px;
 }
 
 .field-name-field-slide-teaser {
-  width: 340px;
+  width: 300px;
+  margin-right: 20px;
 }
 .field-name-field-slide-teaser .filter-help {
   display: none;
+}
+.field-name-field-slide-teaser .cke_contents {
+  height: 128px !important;
 }
 
 .field-name-field-slide-link {

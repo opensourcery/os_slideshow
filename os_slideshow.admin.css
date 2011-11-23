@@ -2,7 +2,14 @@
   width: 32%;
   float: left;
 }
+.ombuslide-processed .overview-column .label-wrapper {
+  display: none;
+}
+.ombuslide-processed .overview-column.title {
+  margin-top: 1em;
+}
 .ombuslide-processed .overview-column img {
+  float: left;
   width: 70px;
   height: 70px;
 }
