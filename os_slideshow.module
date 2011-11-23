@@ -20,7 +20,7 @@ function os_slideshow_form_bean_form_alter(&$form, &$form_state, $form_id) {
  */
 function os_slideshow_bean_types_api_info() {
   return array(
-    'api' => 1,
+    'api' => 3,
   );
 }
 

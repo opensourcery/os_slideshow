@@ -21,9 +21,7 @@ class slideshow_bean extends bean_plugin {
   /**
    * Builds extra settings for the block edit form.
    */
-  public function form($bean) {
-    $form = array();
-
+  public function form($bean, $form, &$form_state) {
     // Gather file field formatters
     $file_styles = array();
     foreach (field_info_formatter_types() as $formatter => $info) {
