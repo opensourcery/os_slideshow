@@ -29,16 +29,13 @@ function os_slideshow_bean_types_api_info() {
  */
 function os_slideshow_bean_types() {
   $plugins = array();
-  $plugin_path = drupal_get_path('module', 'os_slideshow') .  '/plugins/bean';
-
   $plugins['slideshow'] = array(
     'label' => t('Slideshow'),
     'handler' => array(
       'class' => 'slideshow_bean',
       'parent' => 'bean',
     ),
-    'path' => $plugin_path,
-    'file' => 'slideshow.inc',
+    'file' => 'os_slideshow.info',
   );
   return $plugins;
 }
