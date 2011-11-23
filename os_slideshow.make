@@ -4,8 +4,9 @@ api = 2
 
 ; Bean
 projects[bean][subdir] = "contrib"
-projects[bean][version] = "1.0-beta5"
-projects[bean][patch][] = "http://drupal.org/files/bean_entity_view-1323876.patch"
+projects[bean][type] = "module"
+projects[bean][download][type] = "git"
+projects[bean][download][revision] = "c931601f189b5fc704e72f0632f6ae259a1b45cf"
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = "1.0-beta11"
