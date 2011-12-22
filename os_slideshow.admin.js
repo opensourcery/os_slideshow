@@ -22,11 +22,11 @@
 
   Drupal.ombuslideAdmin = Drupal.ombuslideAdmin || {};
 
-  // Initially hide individual slide forms and add "Save" button when form is
+  // Initially hide individual slide forms and add "Collapse" button when form is
   // displayed.
   Drupal.ombuslideAdmin.setupForm = function($form) {
     $form.addClass("slide-form").hide();
-    var $button = $('<div class="form-actions"><input class="form-submit submit" type="button" value="Save" /></div>').click(function() {
+    var $button = $('<div class="form-actions"><input class="form-submit submit" type="button" value="Collapse" /></div>').click(function() {
       $form.hide();
       Drupal.ombuslideAdmin.triggerChange();
       $form.before(Drupal.ombuslideAdmin.createOverview($form));
@@ -58,27 +58,6 @@
       return false;
     });
 
-    html.find(".delete").click(function() {
-      // Handle the special case of wysiwyg editors by detaching the wysiwyg.
-      $('textarea', $form).each(function() {
-        if (Drupal.wysiwyg.instances[this.id]) {
-          var params = {field: this.id};
-          Drupal.wysiwygDetach($form, params);
-        }
-      });
-
-      // Field collection will delete any collection where all fields are empty,
-      // so clearing all form values will trigger a deletion.
-      $(':input', $form).not(':button, :submit').val('').removeAttr('checked').removeAttr('selected');
-
-      // Handle the special case of field_image display hidden field, which
-      // needs to be set in order for the form to process correctly.
-      $("input[name$='\\[field_image\\]\\[und\\]\\[0]\\[display\\]']", $form).val(1);
-
-      Drupal.ombuslideAdmin.triggerChange();
-      return false;
-    });
-
     return html;
   };
 
@@ -105,7 +84,7 @@
       html += $(".field-name-field-slide-headline input", $form).val();
     }
     html += '</div>';
-    html += '<div class="overview-column form-actions form-wrapper"><input type="button" class="form-submit edit" value="Edit" /><input type="button" class="form-submit delete" value="Delete" /></div>';
+    html += '<div class="overview-column form-actions form-wrapper"><input type="button" class="form-submit edit" value="Expand" /></div>';
     html += '</td>';
     return html;
   }

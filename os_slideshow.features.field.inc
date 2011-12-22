@@ -42,6 +42,7 @@ function os_slideshow_field_default_fields() {
             'delete' => 'Delete Slide',
             'description' => 1,
             'edit' => 'Edit Slide',
+            'view_mode' => 'full',
           ),
           'type' => 'field_collection_view',
           'weight' => '0',

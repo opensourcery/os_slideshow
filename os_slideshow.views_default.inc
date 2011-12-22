@@ -17,7 +17,7 @@ function os_slideshow_views_default_views() {
   $view->base_table = 'bean';
   $view->human_name = 'Slideshow';
   $view->core = 7;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
@@ -205,7 +205,7 @@ function os_slideshow_views_default_views() {
   $handler->display->display_options['fields']['nothing']['hide_empty'] = 0;
   $handler->display->display_options['fields']['nothing']['empty_zero'] = 0;
   $handler->display->display_options['fields']['nothing']['hide_alter_empty'] = 0;
-  /* Contextual filter: Block: Block ID */
+  /* Contextual filter: Block: Internal, numeric block ID */
   $handler->display->display_options['arguments']['bid']['id'] = 'bid';
   $handler->display->display_options['arguments']['bid']['table'] = 'bean';
   $handler->display->display_options['arguments']['bid']['field'] = 'bid';
