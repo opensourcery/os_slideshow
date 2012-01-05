@@ -1,3 +1,66 @@
+.field-name-field-slide-image,
+.field-name-field-slide-headline,
+.field-name-field-slide-teaser,
+.field-name-field-slide-link {
+  float: left;
+  margin-right: 10px;
+}
+
+.field-name-field-slide-image {
+  width: 248px;
+}
+.field-name-field-slide-image .media-item {
+  margin-left: 0;
+}
+.field-name-field-slide-image .preview {
+  float: left;
+}
+.field-name-field-slide-image .media-widget a.button,
+.field-name-field-slide-image .media-widget a.button + a.button {
+  float: left;
+  font-size: 12px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 3px 13px;
+}
+
+.field-name-field-slide-headline input {
+  width: 260px;
+}
+
+.field-name-field-slide-teaser {
+  width: 300px;
+  margin-right: 20px;
+}
+.field-name-field-slide-teaser .filter-help {
+  display: none;
+}
+.field-name-field-slide-teaser .cke_contents {
+  height: 128px !important;
+}
+
+.field-name-field-slide-link {
+  width: 180px;
+  margin-right: 0;
+}
+.field-name-field-slide-link .link-field-column,
+.field-name-field-slide-link .form-item div.description {
+  white-space: normal;
+  width: 180px;
+}
+.field-name-field-slide-link .link-field-url {
+  clear: left;
+}
+/* This button currently doesn't work so well -- the body field's content
+ * gets deleted (probably due to WYSIWYG/add another incompatibility) */
+.field-name-field-slideshow-slides .field-add-more-submit {
+  display: none;
+}
+
+.field-multiple-table fieldset.redirect-list {
+  display: none;
+}
+
 .ombuslide-processed .overview .overview-column  {
   width: 32%;
   float: left;
