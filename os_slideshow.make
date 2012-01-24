@@ -17,11 +17,8 @@ projects[field_collection][version] = "1.0-beta2"
 projects[link][subdir] = "contrib"
 projects[link][version] = "1.0"
 
-; We're using Media 7.x-2.x
 projects[media][subdir] = "contrib"
-projects[media][type] = "module"
-projects[media][download][type] = "git"
-projects[media][download][revision] = "635ee16b68343313dbe4e3d058e4e4cd246c8f06"
+projects[media][version] = "2.0-unstable3"
 
 ; We want file_styles to be exportable, so we need bleeding edge Styles
 projects[styles][subdir] = "contrib"
